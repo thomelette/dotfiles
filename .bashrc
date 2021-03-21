@@ -9,3 +9,8 @@ alias dotfiles="/usr/local/bin/git --git-dir=$HOME/.dotfiles.git --work-tree=$HO
 # git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME checkout
 # (may fail here due to existing files)
 # dotfiles config --local status.showUntrackedFiles no
+
+# cd ~
+# git clone ...
+# git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME checkout _init_dotfiles.sh
+# ./_init_dotfiles.sh

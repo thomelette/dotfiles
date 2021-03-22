@@ -4,7 +4,7 @@ This README is for dotfiles that I hold in my ~ or $HOME directory.
 
 ## Getting started on a new computer
 
-Run the following,
+Run the code in a terminal below. Note that ````_init_dotfiles.sh```` will move any potentially conflicting files to ````~./old_dotfiles/*```` - including ones you might already use like ````.bash_profile```` and ````.bashrc````, so look there first before you freak out.
 
 ````
 cd ~

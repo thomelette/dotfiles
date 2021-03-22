@@ -2,7 +2,7 @@
 
 
 # Use 'dotfiles' in place of git (e.g. dotfiles status, dotfiles commit, etc.)
-alias dotfiles="/usr/local/bin/git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME"
+alias dotfiles="git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME"
 
 # How to pull down to another system:
 # git clone --bare https://path/to/repo.git $HOME/.dotfiles.git

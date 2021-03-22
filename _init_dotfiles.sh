@@ -6,9 +6,10 @@ files="_init_dotfiles.sh \
 
 echo "Moving prior dotfiles before checkout..."
 
+mkdir _old_dotfiles
 for f in $files; do
     if [ -f "${f}" ]; then
-	mv -n -v ${f} ${f}-`date "+%Y%m%d-%H%M%S"`
+	mv -n -v ${f} _old_dotfiles/${f}-`date "+%Y%m%d-%H%M%S"`
     fi 
 done
 

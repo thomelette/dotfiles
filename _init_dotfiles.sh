@@ -26,7 +26,7 @@ if git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME checkout; then
     
     echo "...done! You're all set!"
     echo "Use 'dotfiles' instead of 'git' to version control files in your ~ directory."
-    echo "(e.g. 'dotfiles status', 'dotfiles diff .bashrc', etc.)
+    echo "(e.g. 'dotfiles status', 'dotfiles diff .bashrc', etc.)"
 else
     echo "ERROR: Failed to checkout repo!"
 fi

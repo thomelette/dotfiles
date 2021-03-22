@@ -12,5 +12,6 @@ alias dotfiles="/usr/local/bin/git --git-dir=$HOME/.dotfiles.git --work-tree=$HO
 
 # cd ~
 # git clone ...
-# git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME checkout _init_dotfiles.sh
+# git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME checkout main -- _init_dotfiles.sh
+# chmod +x _init_dotfiles.sh
 # ./_init_dotfiles.sh

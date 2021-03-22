@@ -1,11 +1,10 @@
 #!/bin/bash
 
-files="_init_dotfiles.sh \
-       .bashrc \
-       "
+# list all files tracked by this git repo
+files=`git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME ls-tree --name-only HEAD`
 
+# move them out of the way
 echo "Moving prior dotfiles before checkout..."
-
 mkdir _old_dotfiles
 for f in $files; do
     if [ -f "${f}" ]; then
@@ -13,12 +12,12 @@ for f in $files; do
     fi 
 done
 
+# then, 'checkout' proper the repo
 echo "...done! Attempting git checkout..."
-
 if git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME checkout; then
     echo "...okay! Hiding untracked files..."
     
-    # not sure why you have to do this; probably the checkout of one file
+    # not sure why you have to do this; probably a result of checking out this file only
     git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME reset --hard HEAD
 
     # hide untracked files by default

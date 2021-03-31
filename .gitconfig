@@ -3,5 +3,61 @@
 # Please adapt and uncomment the following lines:
 	name = thomelette
 	email = https://github.com/thomelette
+[core]
+	autocrlf = input
+	
 [alias]
-	g = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status
+	ca = commit --amend -C HEAD
+	co = checkout
+	cb = checkout -b
+
+	cr = clone --recursive
+	
+	rv = remote -v
+
+	fp = fetch --all --prune
+	ft = fetch --all --tags
+
+	puf = push --force
+	toss = checkout --
+
+#	g = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+	graph = log --graph --abbrev-commit --all --date=short --pretty=format:'%C(bold blue)%h%C(reset)%C(bold yellow)%d%C(reset) %s%C(green) (%cr) %C(bold blue)<%an>%C(reset)'
+	g     = log --graph --abbrev-commit --all --pretty=format:'%C(bold blue)%h%C(reset)%C(bold yellow)%d%C(reset) %s%C(green) (%cr) %C(bold blue)<%an>%C(reset)' -20
+	gg    = log --graph --abbrev-commit --all --pretty=format:'%C(bold blue)%h%C(reset)%C(bold yellow)%d%C(reset) %s%C(green) (%cr) %C(bold blue)<%an>%C(reset)'
+	lg    = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(green)(%ar) %C(bold blue)<%an>%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)%C(reset)' --all
+
+ 	# recursive/submodule pull
+ 	spull = !git pull && git submodule sync --recursive && git submodule update --init --recursive
+  
+	# change author on most recent commit
+ 	steal-credit = commit --amend --reset-author --no-edit
+
+	show-branch-commits = show-branch --color=always -a --more=10 --no-name
+
+	# display diff between previous commit
+	# Usage: 'git pdiff beef00' but replace with your hash/branch name 
+	pdiff = "!sh -c 'git diff $1~1..$1' -"
+
+	crb = "!f() { git clone --recursive ssh://git@bitbucket.csw.l-3com.com:7999/$1/$2.git; }; f"
+
+[color]
+	ui = auto
+
+[color "branch"]
+	current = yellow reverse
+	local   = yellow
+	remote  = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old  = red bold
+	new  = green bold
+
+[color "status"]
+	added     = green
+	changed   = yellow
+	untracked = cyan

@@ -24,7 +24,10 @@ if git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME checkout; then
     git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME config --local status.showUntrackedFiles no
     
     echo "...done! You're all set!"
-    echo "Use 'dotfiles' instead of 'git' to version control files in your ~ directory."
+	echo "**"
+	echo "** Close this terminal and open a new one! **"
+	echo "**"
+    echo "Then, use 'dotfiles' instead of 'git' to version control files in your ~ directory."
     echo "(e.g. 'dotfiles status', 'dotfiles diff .bashrc', etc.)"
 else
     echo "ERROR: Failed to checkout repo!"

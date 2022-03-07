@@ -41,7 +41,7 @@
 	# Usage: 'git pdiff beef00' but replace with your hash/branch name 
 	pdiff = "!sh -c 'git diff $1~1..$1' -"
 
-	crb = "!f() { git clone --recursive ssh://git@bitbucket.csw.l-3com.com:7999/$1/$2.git; }; f"
+	crb = "!f() { git clone --recursive ssh://git@bitbucket.corp.com:port/$1/$2.git; }; f"
 
 [color]
 	ui = auto
